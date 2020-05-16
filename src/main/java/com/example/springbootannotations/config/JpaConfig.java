@@ -19,16 +19,5 @@ public class JpaConfig {
     this.properties = properties;
   }
 
-  @Bean
-  public DataSource dataSource() {
-    AnnotationsAppProperties.PersistenceProperties persistenceProperties = properties.getPersistence();
-    DriverManagerDataSource dataSource = new DriverManagerDataSource();
-    dataSource.setDriverClassName(persistenceProperties.getDriverClassName());
-    dataSource.setUrl(persistenceProperties.getUrl());
-    dataSource.setUsername(persistenceProperties.getUsername());
-    dataSource.setPassword(persistenceProperties.getPassword());
-
-    return dataSource;
-  }
-
+  
 }
